@@ -1,0 +1,177 @@
+ /* 
+            Natalya Despain Freshman Year Group Project. 
+            This was my contribution to a team project my Freshman year. 
+*/
+
+package chooseyouradventure;
+
+
+//import statements
+import java.util.Scanner;
+
+
+//ADVENTURE TWO
+public class AdventureTwo {
+    
+    
+    
+    public void mainAdventureTwo(){
+    
+       //variables are player choices that are implemented in if else statements to determine outcomes.
+        String choice1;
+        String choice2;
+        String choice3;
+        String choice6;
+        String choice7;
+        
+        int choice4;
+        int choice5;
+        
+        //array of weapon choices prompted within the game
+        String[] weapons = {"crowbar", "baseball bat", "knife"};
+        
+        //default used if a weapon is not chosen.
+        String weaponChoice = "martial arts skills of Bruce Lee";
+        
+        
+        
+        
+        
+    /******* Beginning of the the second adventure choice ************/    
+        System.out.print("\nYou find yourself entering into some type of apocalyptic wasteland.");
+        System.out.print("\nYou can’t see much of any sign of life except for an abandoned diner about a mile out.\n");
+        
+        
+        
+        
+        
+/*********************************************** 1st Choice ********************************************************************/         
+        int exit = 0;
+        //while statement that determines when to stop running the game when the player dies
+        while(exit!=1){
+            
+        
+        System.out.println("Do you wish to continue through the wasteland? (type:  yes or no)");
+        
+        Scanner input1 = new Scanner(System.in);
+        choice1 = input1.nextLine();
+        
+        if ("yes".equals(choice1)){
+            
+            System.out.printf("%n%n%nYou continue down a desolate road in attempt to reach the diner");
+            System.out.print("\nwhen suddenly you notice an old ford%n pickup speeding towards your direction about a half mile away.");
+        }else{
+            System.out.printf("%n%n%nYou turn around to head back but your exit seems to have vanished. You notice%n"
+                    + "an old Ford pickup speeding toward your direction about a half mile away on a desolate road.");
+        }
+        
+        
+/*********************************************** 2nd Choice ********************************************************************/       
+        System.out.printf("%nDo you try and get the driver's attention?   (Type: yes to get his attention or no to move out of the way) %n");
+        
+        Scanner input2 = new Scanner(System.in);
+        choice2 = input2.nextLine();
+        
+        if ("yes".equals(choice2)){
+            
+            System.out.printf("%n%nThe driver doesn’t seem to be slowing down at all. %nHe’s moving at full speed ");
+            System.out.printf("towards you.%nYou manage to jump out of the way as you watch the driver crash into the diner.%n");
+        }else{
+            System.out.printf("%n%n%nYou watch as the driver zips by and crashes into the diner.");
+            System.out.println();
+        }
+        
+    
+/*********************************************** 3rd Choice/4th choice/5th choice ********************************************************************/         
+        System.out.printf("You find yourself curious as to what happened to the driver. %nYou continue on your way to the diner. ");
+        System.out.printf("As you get within 10 feet of the truck you hear a faint %ngrowling noise coming from the truck.");
+        System.out.printf("%nDo you want to investigate the truck?   (Type: yes or no)");
+        
+        Scanner input3 = new Scanner(System.in);
+        choice3 = input3.nextLine();
+        
+        if ("yes".equals(choice3)){
+            
+            System.out.printf("%n%n As you slowly inch up to the driver’s side the driver who looks to be undead attempts to bite you!%n  ");
+            System.out.printf("You notice a crowbar, a baseball bat and a knife on the ground to your right. %n %nDo you wish to grab one of the weapons or take on the zombie with %nyour bare fists?");
+            System.out.print("\n(Enter: Press 1 to grab a weapon, or 2 to punch the zombie): ");
+                    /*This is where a weapon choice arises in the game. The weapon is an element in the weapons array and the weapon 
+            chosen becomes the variable weaponChoice
+            */
+            
+                    Scanner input4 = new Scanner(System.in);
+                    choice4 = input4.nextInt();
+                    if(choice4 == 1){
+                        System.out.print("\nWhich weapon do you choose? (Enter: 1 for crowbar, 2 for baseball bat, or 3 for knife).");
+                        Scanner input5 = new Scanner(System.in);
+                        choice5 = input5.nextInt();
+                        if(choice5 == 1){
+                            System.out.printf("You strike the zombie across the face with the %s and manage to defeat him.", weapons[0]);
+                            weaponChoice = weapons[0];
+                        }
+                        
+                        if(choice5 == 2){
+                            System.out.printf("You strike the zombie across the face with the %s and manage to defeat him.", weapons[1]);
+                            weaponChoice = weapons[1];
+                        }
+                        if(choice5 == 3){
+                            System.out.printf("You strike the zombie in the forehead with the %s and manage to defeat him.", weapons[2]);
+                            weaponChoice = weapons[2];
+                        }
+                        System.out.println(" You walk towards the diner entrance.");
+                    }else{
+                         System.out.printf("%n %n %nYou swing your right arm at the zombie as it manages to bite your forearm.%n ");
+                         System.out.println("You become a zombie, miserably wandering the wasteland for eternity. End of Game.");
+                         
+                         exit = 1;
+                     }
+                    
+        }else{
+            exit = 0;
+            
+        }
+            
+    
+/*********************************************** 6th Choice/7th Choice ********************************************************************/       
+   if(exit == 0){
+        System.out.printf("%n %n %nYou walk towards the diner entrance.");
+        System.out.printf(" %n %n %nInside, the diner is pretty desolate. No life or any food in sight at first glance. "
+                + "%nYou’re starving so you decide to take a look around. Just as you are about %n");
+        System.out.println("to give up you catch the faint smell of barbecue coming from the kitchen. You rush to the kitchen door ");
+        System.out.println("only to be stopped in your tracks to the sound of growling coming from the other side of the door. ");
+        System.out.print("\nDo you wish to continue through the door? (Type: yes or no)");
+        
+        Scanner input6 = new Scanner(System.in);
+        choice6 = input6.nextLine();
+        
+        if ("yes".equals(choice6)){
+            
+            System.out.printf("%n %n %nEven though you have the %s you realize there are too many zombies. %n", weaponChoice);
+            System.out.println("The zombies manage to get to you before you have the chance to run out. ");
+            System.out.println("You become a zombie, miserably wandering the wasteland for eternity. End of Game.");
+            exit = 1;
+            
+        }else{
+            System.out.printf("%n %n %nYou manage to leave the diner without alerting the zombies. %nStarving, exhausted and terrified you are about to lose all hope.%n ");
+            System.out.printf("As you head back down the road you notice another car driving towards you. %nThis time though it is slowing down as it gets closer to you.%n ");
+            System.out.printf("The driver pulls right up next to you with a gun pointed at your head. The man yells%n"
+                    + " “get in the car!”");
+            System.out.println("  Do you get into the car?");
+            
+            
+            Scanner input7 = new Scanner(System.in);
+            choice7 = input7.nextLine();
+            
+            System.out.printf("%n %n %nYour vision starts to become blurry and you find yourself back at home%nin your bed. You are relieved that it was all just a dream.");
+        }     
+           
+                         
+            // end of game.
+          
+          
+        }    
+      
+    }
+    
+  } 
+}
